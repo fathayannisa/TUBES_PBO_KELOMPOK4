@@ -4,12 +4,9 @@
  * and open the template in the editor.
  */
 package Entitas;
+import java.util.Scanner;
 
-/**
- *
- * @author acer
- */
-public class Pasien {
+public class Pasien extends User {
     private int idpasien;
     private String lokasi;
     private int umur;
