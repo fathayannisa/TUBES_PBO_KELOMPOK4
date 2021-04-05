@@ -31,7 +31,7 @@ public class Dokter {
         tabeldokter[0] = new Dokter("dr. Fathaya", "fathaya@gmail.com", 123, "Online", "FNA","Spesialis Dokter Jantung");
         tabeldokter[1] = new Dokter("dr. Eral", "eral@gmail.com", 345, "Offline", "MUH","Spesialis Dokter Cinta");
         tabeldokter[2] = new Dokter("dr. Carolin", "carol@gmail.com", 567, "Online", "CRL","Spesialis Dokter Mata");        
-        tabeldokter[3] = new Dokter("dr. Amanda", "manda@gmail.com", 890, "Busy", "AMD","Spesialis Dokter Otopsi");        
+        tabeldokter[3] = new Dokter("dr. Cici", "cici@gmail.com", 890, "Busy", "CCI","Spesialis Dokter Otopsi");        
         tabeldokter[4] = new Dokter("dr. Ranran", "rana@gmail.com", 555, "Online", "RNA","Spesialis Dokter Anak");        
         
         for (int i=0; i<tabeldokter.length; i++ ){
