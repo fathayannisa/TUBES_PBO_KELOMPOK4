@@ -1,11 +1,10 @@
-
 package Entitas;
 
 public class Dokter extends User{
     private String spesialisDokter;
     private String idDokter;
-
-    public Dokter(String nama, String email, int password, String status, String idDokter, String spesialisDokter){
+    
+    public void setManualDokter(String nama, String email, int password, String status, String idDokter, String spesialisDokter){
         super.setnama(nama);
         super.setEmail(email);
         super.setPassword(password);
@@ -23,17 +22,27 @@ public class Dokter extends User{
     }
     
     public void dataPreview(Dokter[] tabeldokter){
-        tabeldokter = new Dokter[5];
-        
-        tabeldokter[0] = new Dokter("dr. Fathaya", "fathaya@gmail.com", 123, "Online", "FNA","Spesialis Dokter Jantung");
-        tabeldokter[1] = new Dokter("dr. Eral", "eral@gmail.com", 345, "Offline", "MUH","Spesialis Dokter Cinta");
-        tabeldokter[2] = new Dokter("dr. Carolin", "carol@gmail.com", 567, "Online", "CRL","Spesialis Dokter Mata");        
-        tabeldokter[3] = new Dokter("dr. Amanda", "manda@gmail.com", 890, "Busy", "AMD","Spesialis Dokter Otopsi");        
-        tabeldokter[4] = new Dokter("dr. Ranran", "rana@gmail.com", 555, "Online", "RNA","Spesialis Dokter Anak");        
-        
-        for (int i=0; i<tabeldokter.length; i++ ){
-            tabeldokter[i].displayinfo();
+        for (int i = 1 ; i < 5 ; i ++) {
+            tabeldokter[i] = new Dokter();
         }
+        tabeldokter[0].setManualDokter("dr. Fathaya", "fathaya@gmail.com", 123, "Online", "FNA","Spesialis Dokter Jantung");
+        tabeldokter[1].setManualDokter("dr. Eral", "eral@gmail.com", 345, "Offline", "MUH","Spesialis Dokter Cinta");
+        tabeldokter[2].setManualDokter("dr. Carolin", "carol@gmail.com", 567, "Online", "CRL","Spesialis Dokter Mata");        
+        tabeldokter[3].setManualDokter("dr. Cici", "cici@gmail.com", 890, "Busy", "CCI","Spesialis Dokter Otopsi");        
+        tabeldokter[4].setManualDokter("dr. Ranran", "rana@gmail.com", 555, "Online", "RNA","Spesialis Dokter Anak");        
+        
+        /*for (int i=0; i<tabeldokter[0].getValue(tabeldokter); i++ ){
+            tabeldokter[i].displayinfo();
+        }*/
+    }
+    
+    public int getValue(Dokter[] total){
+        int banyak = 0;
+        while (total[banyak] != null && banyak <= total.length) {
+            banyak = banyak + 1;
+        }
+
+        return banyak;
     }
     
     public void displayinfo(){
