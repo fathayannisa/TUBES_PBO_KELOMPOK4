@@ -12,17 +12,65 @@ public class DriverEHospital {
         psn[0] = new Pasien();
         dokter[0] = new Dokter();
         tabelpesan[0] = new PesanDokter();
+        int indekscari = 0;
+        boolean Kebenaran = false;
+        int globalindeks = 0;
         
         dokter[0].dataPreview(dokter);
         psn[0].dataPreview(psn);
-        tabelpesan[0].setPesanDokter(psn, 1, dokter, nomorAntrian);
-        tabelpesan[0].displayinfo(tabelpesan);
         
-        Scanner sc = new Scanner(System.in); 
-        /*String cari = sc.nextLine();
-        int indeks = tabelpesan[0].cari(tabelpesan, cari);*/
-        tabelpesan[0].updateData(tabelpesan, 0, dokter, psn);
-        tabelpesan[0].displayinfo(tabelpesan);
-        
+        Scanner input = new Scanner (System.in);
+        System.out.println("Selamat Datang di E-Hospital");
+        System.out.println("1. LOGIN");
+        System.out.println("2. Registrasi");
+        System.out.println("Masukan Pilihan Anda : ");
+        int Masukan = input.nextInt();
+        while (Masukan != 0) {
+            if (Masukan == 1){
+                System.out.println("Masukan email");
+                String Username = input.nextLine();
+                System.out.println("Masukan Password");
+                String Password = input.nextLine();
+                
+                for (int i = 0; i < psn[0].getValue(psn) ; i++) {
+                    if (psn[i].getEmail().intern() == Username.intern() && psn[i].getPass().intern() == Password.intern()) {
+                        indekscari = i;
+                        Kebenaran = true;
+                    }
+                }
+                
+                if (Kebenaran == true) {
+                    System.out.println("Selamat Datang");
+                    System.out.println("1. Pesan Dokter");
+                    System.out.println("2. Periksa");
+                    Masukan = input.nextInt();
+                    while (Masukan != 0) {
+                        if (Masukan == 1) {
+                            
+                        } else if (Masukan == 2) {
+                            
+                        }
+                        System.out.println("Selamat Datang");
+                        System.out.println("1. Jadwal Dokter");
+                        System.out.println("2. Periksa");
+                        System.out.print("Masukan Pilihan menu : ");
+                        Masukan = input.nextInt();
+                    }
+                }else{
+                    System.out.println("Data Tidak Ada");
+                }
+                 
+            }else if (Masukan == 2) {
+                System.out.println("Registrasi Akun");
+                globalindeks = psn[0].getValue(psn);
+                System.out.println(globalindeks);
+                //psn[globalindeks] = new Pasien();
+                //psn[globalindeks].inputPasien();
+                
+                //psn[2].displayinfo();
+                
+            }
+        }
+         
     }
 }
