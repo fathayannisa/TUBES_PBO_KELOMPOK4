@@ -5,7 +5,7 @@ public class User {
     
     private String nama;
     private String email;
-    private int password;
+    private String password;
     private String status;
     
     public void setnama(String Nama){     
@@ -16,7 +16,7 @@ public class User {
         email = Email;
     }
     
-    public void setPassword(int Password){
+    public void setPassword(String Password){
         password = Password;
     }
     
@@ -32,7 +32,7 @@ public class User {
         return email;
     }
     
-    public int getPass(){
+    public String getPass(){
         return password;
     }
     
