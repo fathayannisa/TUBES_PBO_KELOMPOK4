@@ -9,29 +9,33 @@ public class Pasien extends User{
     private int tanggalLhr;
     
     public void inputPasien() {
-        String nama, email;
+        String nama, email, password;
         Scanner sc = new Scanner(System.in); 
-        System.out.print("Nama pasien : ");
+        System.out.print("Nama pasien   : ");
         nama = sc.nextLine();
         super.setnama(nama);
         
-        System.out.print("Id pasien : ");
+        System.out.print("Id pasien     : ");
         idpasien = sc.nextInt();
         
-        System.out.print("Lokasi : ");
+        System.out.print("Lokasi        : ");
         lokasi = sc.nextLine();
         lokasi = sc.nextLine();
         
         System.out.print("Tanggal Lahir : ");
         tanggalLhr = sc.nextInt();   
         
-        System.out.print("umur : ");
+        System.out.print("umur          : ");
         umur = sc.nextInt();  
         
-        System.out.print("Email : ");
+        System.out.print("Email         : ");
         email = sc.nextLine();
         email = sc.nextLine();
         super.setEmail(email);
+        
+        System.out.print("Password      : ");
+        password = sc.nextLine();
+        super.setPassword(password);
        
     }
     
@@ -80,7 +84,7 @@ public class Pasien extends User{
         for (int i = 1 ; i < 2 ; i ++) {
             tabelPasien[i] = new Pasien();
         }
-        tabelPasien[0].setManualPasien("naga", "naga@gmail.com", 101, 12, "Bandung",21);
+        tabelPasien[0].setManualPasien("yaudah", "yaudah@gmail.com", 101, 12, "Bandung",21);
         tabelPasien[1].setManualPasien("inul", "inul@gmail.com", 102, 30, "Bali", 18);
         
         /*for (int i=0; i<tabelPasien[0].getValue(tabelPasien); i++ ){
@@ -97,12 +101,35 @@ public class Pasien extends User{
         return banyak;
     }
     
-    public void displayinfo(){
-        System.out.println("ID Pasien: " + getIdPasien());
-        System.out.println("Nama Pasien: " + super.getNama());
-        System.out.println("Umur: " + getUmur());
-        System.out.println("Email: " + getEmail());
-        System.out.println("Lokasi: " + getLokasi());
-        System.out.println("Tanggal Lahir: " + getTanggalLahir());
+    public int cariDataUser(Pasien[] tabelPasien,String x,String y,int indekscari){
+        for (int i = 0; i < tabelPasien[0].getValue(tabelPasien) ; i++) {
+            if (tabelPasien[i].getEmail().intern() == x.intern() && tabelPasien[i].getPass().intern() == y.intern()) {
+                indekscari++;
+            }
+        }
+        return indekscari;
+    }
+
+    public boolean cekKebenaran(Pasien[] tabelPasien,String x,String y,boolean kebenaran){
+        for (int i = 0; i < tabelPasien[0].getValue(tabelPasien) ; i++) {
+            if (tabelPasien[i].getEmail().intern() == x.intern() && tabelPasien[i].getPass().intern() == y.intern()) {
+                kebenaran = true;
+            }
+        }
+        return kebenaran;
+    }
+    
+    public void displayinfo(Pasien[] psn){
+        for (int i = 0; i < psn[0].getValue(psn); i++) {
+            System.out.println("ID Pasien     : " + psn[i].getIdPasien());
+            System.out.println("Nama Pasien   : " + psn[i].getNama());
+            System.out.println("Umur          : " + psn[i].getUmur());
+            System.out.println("Email         : " + psn[i].getEmail());
+            System.out.println("Password      : " + psn[i].getPass());
+            System.out.println("Lokasi        : " + psn[i].getLokasi());
+            System.out.println("Tanggal Lahir : " + psn[i].getTanggalLahir());
+            System.out.println(" ");
+            System.out.println("--------------------------");
+        }
     }
 }
