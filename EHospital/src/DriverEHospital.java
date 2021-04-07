@@ -1,6 +1,7 @@
 import Entitas.Dokter;
 import Entitas.Pasien;
 import Relasi.PesanDokter;
+import java.util.Scanner;
 
 public class DriverEHospital {
     public static void main(String[] args) {
@@ -16,5 +17,12 @@ public class DriverEHospital {
         psn[0].dataPreview(psn);
         tabelpesan[0].setPesanDokter(psn, 1, dokter, nomorAntrian);
         tabelpesan[0].displayinfo(tabelpesan);
+        
+        Scanner sc = new Scanner(System.in); 
+        /*String cari = sc.nextLine();
+        int indeks = tabelpesan[0].cari(tabelpesan, cari);*/
+        tabelpesan[0].updateData(tabelpesan, 0, dokter, psn);
+        tabelpesan[0].displayinfo(tabelpesan);
+        
     }
 }
