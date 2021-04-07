@@ -30,10 +30,10 @@ public class DriverEHospital {
                 System.out.println("Masukan email");
                 String Username = input.nextLine();
                 System.out.println("Masukan Password");
-                String Password = input.nextLine();
+                int Password = input.nextInt();
                 
                 for (int i = 0; i < psn[0].getValue(psn) ; i++) {
-                    if (psn[i].getEmail().intern() == Username.intern() && psn[i].getPass().intern() == Password.intern()) {
+                    if (psn[i].getEmail().intern() == Username.intern() && psn[i].getPass() == Password){
                         indekscari = i;
                         Kebenaran = true;
                     }
@@ -63,14 +63,17 @@ public class DriverEHospital {
             }else if (Masukan == 2) {
                 System.out.println("Registrasi Akun");
                 globalindeks = psn[0].getValue(psn);
-                System.out.println(globalindeks);
-                //psn[globalindeks] = new Pasien();
-                //psn[globalindeks].inputPasien();
-                
-                //psn[2].displayinfo();
+                psn[globalindeks] = new Pasien();
+                psn[globalindeks].inputPasien();
+                System.out.println("---");
+                psn[globalindeks].displayinfo();
                 
             }
+        System.out.println("Selamat Datang di E-Hospital");
+        System.out.println("1. LOGIN");
+        System.out.println("2. Registrasi");
+        System.out.println("Masukan Pilihan Anda : ");
+        Masukan = input.nextInt();
         }
-         
     }
 }
